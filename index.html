@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+  <title>Starcraft</title>
+
+  <link rel="stylesheet" type"text/css" href="main.css">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+
+  <script type="text/jquery" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+
+</head>
+<body ng-controller='dataController'>
+
+<div class="filterTable">
+  <h3>Filter By:</h3>
+
+      <input type="search" ng-model="searchData"></input>
+
+
+</div>
+
+
+<div>
+  <table style="width : 100%; text-align : center">
+    <tr>
+      <th ng-repeat="headingName in outputData.cols">{{headingName}}</th>
+    </tr>
+    <tr ng-repeat="playerData in outputData.data | filter:searchData">
+      <td ng-repeat="playerIndex in playerData">{{playerIndex}}</td>
+ <!--      <td>{{playerData[1]}}</td>
+      <td>{{playerData[2]}}</td>
+      <td>{{playerData[3]}}</td>
+      <td>{{playerData[4]}}</td>
+      <td>{{playerData[5]}}</td> -->
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
